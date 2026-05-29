@@ -1,0 +1,151 @@
+/* Page Max Width */
+
+body {
+  max-width: 850px;
+  margin: auto;
+  padding: 3%;
+}
+
+h1 { /* Paper Title */
+  font-family: 'Lato';
+  font-size: 32px;
+  font-weight: normal;
+  text-align: center;
+}
+
+body,
+p,
+div { /* Contents */
+  font-family: 'Lato';
+  font-size: 14px;
+}
+
+a {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color: #f09228;
+  text-decoration: none;
+}
+
+.logos {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px 40px 0px;
+  gap: 30%;
+  & img {
+    max-height: 60px;
+    max-width: 100%;
+    min-width: 0;
+    flex-shrink: 1;
+  }
+}
+
+.author-list {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-top: 25px;
+  gap: 20px;
+  & .author {
+    text-align: center;
+    flex-grow: 1;
+    & .name {
+      font-size: 16px;
+    }
+    & .org {
+      font-size: 12px;
+    }
+  }
+}
+
+.author-footnote {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.publication {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  & .award {
+    color: rgb(200, 0, 255);
+    font-weight: bold;
+  }
+  & .venue {
+    font-style: italic;
+  }
+}
+
+.links {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  & .button {
+    height: 30px;
+    padding: 0px 16px;
+    border-radius: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color, grey);
+    & img {
+      height: 18px;
+    }
+  }
+  & .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  }
+}
+
+iframe {
+  display: block;
+  width: 94%; 
+  max-width: 650px; 
+  aspect-ratio: 16 / 9;
+  margin: 75px auto 0px auto;
+  padding: 0 3%;
+}
+
+.abstract {
+  max-width: 650px;
+  text-align: justify;
+  margin: 75px auto 0px auto;
+  padding: 0 3%;
+}
+
+.abstract::before {
+  content: "Abstract"; 
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;  
+  margin-bottom: 20px;
+}
+
+.citation {
+  max-width: 650px;
+  margin: 75px auto 0px auto;
+  padding: 0 3%;
+  & pre {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 16px 16px 0px 32px;
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+.citation::before {
+  content: "Citation"; 
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;  
+  margin-bottom: 20px;
+}

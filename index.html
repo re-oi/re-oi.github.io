@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+
+    <title>Reimagination with Test-time Observation Interventions</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Reimagination with Test-time Observation Interventions (ReOI)">
+    <meta property="og:description" content="ReOI is a test-time strategy that enables world models to predict more reliable action outcomes in open-world scenarios.">
+    <meta property="og:image" content="https://re-oi.github.io/assets/logo/berkeley-logo.svg">
+    <meta property="og:url" content="https://re-oi.github.io">
+    <meta property="og:type" content="website">
+
+    <!-- Preload Fonts -->
+    <link rel="preload" href="/assets/fonts/lato-v25-latin_latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/lato-v25-latin_latin-ext-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/lato-v25-latin_latin-ext-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/lato-v25-latin_latin-ext-700italic.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- StyleSheet -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+  </head>
+
+  <body>
+    <header class="logos">
+      <img src="/assets/logo/berkeley-logo.svg">
+      <img src="/assets/logo/cmu-ri-logo.png">
+    </header>
+
+    <h1>Reimagination with Test-time Observation Interventions</h1>
+
+    <section>
+      <div class="author-list">
+        <div class="author">
+          <div class="name">
+            <a href="https://thomaschen98.github.io">Yuxin Chen</a>*
+          </div>
+          <div class="org">UC Berkeley</div>
+        </div>
+
+        <div class="author">
+          <div class="name">
+            <a href="https://jianglanwei.com">Jianglan Wei</a>*
+          </div>
+          <div class="org">UC Berkeley</div>
+        </div>
+
+        <div class="author">
+          <div class="name">
+            <a href="https://chenfengx.com">Chenfeng Xu</a>
+          </div>
+          <div class="org">UC Berkeley</div>
+        </div>
+
+        <div class="author">
+          <div class="name">
+            <a href="https://sites.google.com/site/boyilics/home">Boyi Li</a>
+          </div>
+          <div class="org">UC Berkeley</div>
+        </div>
+
+        <div class="author">
+          <div class="name">
+            <a href="https://me.berkeley.edu/people/masayoshi-tomizuka/">Masayoshi Tomizuka</a>
+          </div>
+          <div class="org">UC Berkeley</div>
+        </div>
+
+        <div class="author">
+          <div class="name">
+            <a href="https://www.cs.cmu.edu/~abajcsy/">Andrea Bajcsy</a>
+          </div>
+          <div class="org">Carnegie Mellon University</div>
+        </div>
+
+        <div class="author">
+          <div class="name">
+            <a href="https://thomasrantian.github.io">Ran Tian</a>
+          </div>
+          <div class="org">UC Berkeley</div>
+        </div>
+      </div>
+
+      <div class="author-footnote">
+        * Denotes Equal Contributions
+      </div>
+    </section>
+
+    <section class="publication">
+      <span class="award">Best Paper Finalist</span> at
+      <span class="venue">RSS Out-of-Distribution Workshop</span>, 
+      <time datetime="2025">2025</time>
+      <br>
+      <span class="venue">IEEE International Conference on Robotics and Automation</span>,
+      <time datetime="2026">2026</time>
+    </section>
+
+    <nav class="links">
+      <a class="button" href="https://arxiv.org/abs/2506.16565" style="--color: #A32C25;">
+        <img src="/assets/logo/arxiv-logo.svg">
+      </a>
+    </nav>
+
+    <iframe src="https://www.youtube.com/embed/hQOhsl9nFas?si=QMFKbyHZdKkCVpOu" 
+      title="Spotlight Video" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+
+    <article class="abstract">
+      World models enable robots to “imagine” future
+      observations given current observations and planned actions, and
+      have been increasingly adopted as generalized dynamics models
+      to facilitate robot learning. Despite their promise, these models
+      remain brittle when encountering novel visual distractors such
+      as objects and background elements rarely seen during training.
+      Specifically, novel distractors can corrupt action outcome predictions, 
+      causing downstream failures when robots rely on the world
+      model imaginations for planning or action verification. In this
+      work, we propose Reimagination with Observation Intervention
+      (ReOI), a simple yet effective test-time strategy that enables
+      world models to predict more reliable action outcomes in open-world 
+      scenarios where novel and unanticipated visual distractors
+      are inevitable. Given the current robot observation, ReOI first
+      detects visual distractors by identifying which elements of the
+      scene degrade in physically implausible ways during world model
+      prediction. Then, it modifies the current observation to remove
+      these distractors and bring the observation closer to the training
+      distribution. Finally, ReOI “reimagines” future outcomes with
+      the modified observation and reintroduces the distractors post-hoc 
+      to preserve visual consistency for downstream planning and
+      verification. We validate our approach on a suite of robotic
+      manipulation tasks in the context of action verification, where the
+      verifier needs to select desired action plans based on predictions
+      from a world model. Our results show that ReOI is robust to both
+      in-distribution and out-of-distribution visual distractors. Notably,
+      it improves task success rates by up to 3× in the presence of
+      novel distractors, significantly outperforming action verification
+      that relies on world model predictions without imagination
+      interventions.
+    </article>
+  
+    <section class="citation">
+      <pre>
+        <code>
+@inproceedings{chen2026reimagination,
+  title={Reimagination with Test-time Observation Interventions: Distractor-Robust World Model Predictions for Visual Model Predictive Control},
+  author={Chen, Yuxin and Wei, Jianglan and Xu, Chenfeng and Li, Boyi and Tomizuka, Masayoshi and Bajcsy, Andrea and Tian, Ran},
+  booktitle={Proceedings of the IEEE International Conference on Robotics and Automation},
+  year={2026},
+}
+        </code>
+      </pre>
+    </section>
+
+  </body>
+</html>
